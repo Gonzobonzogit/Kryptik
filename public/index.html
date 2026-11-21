@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style/darkstyle.css">
+    <link rel="icon" href="assets/icon/app-icon-square.svg" type="image/x-icon">
+    <link rel="shortcut-icon" href="assets/icon/app-icon-square.svg" type="image/x-icon">
+    <title>Kryptik Passcodes</title>
+  </head>
+
+  <body>
+   <script src="assets/logic/nav.js"></script> 
+    <div id="app-container">
+     <div id="hero-bar">
+         <h1 id="welcome">Welcome to Kryptik Passcodes</h1>
+         <h3 id="welcomeMsg">Check your password security below.</h3>
+      </div>
+       <!--Input field-->
+
+       <div id="input-container">
+        <div id="input-group">
+         <input type="password" id="input-Pass" placeholder="Enter password...">
+          <div id="toggles">
+           <label id="unmask">
+            <input type="checkbox" id="show-pass">Show Password
+           </label>
+          </div>
+        </div>
+
+        <div id="main-btns">
+            <button class="inputBtn" id="check-btn">Check</button>
+            <button class="inputBtn" id="clear-btn">Clear</button>
+            <button class="inputBtn" id="reset-btn">Reset</button>
+        </div>
+       </div>
+
+
+      <!--The 'Tracker'-->
+       <div id="strength-meter-cont">
+        <div class="meter-fill" id="strength-meter"></div>
+       </div>
+    </div>
+
+
+    <!--Password requirements-->
+<div id="rules-container">
+    <details id="rulesDetails" class="collapsible-section">
+      <summary class="collapsible-trigger">What we check for: </summary>
+      <div class="collapsible-content">
+        <ul id="rules-req">
+          <li data-rule="length">Passwords ideally should be a minimum of 10 characters</li>
+          <li data-rule="upper">Passwords should contain at least 1 uppercase letter</li>
+          <li data-rule="lower">Passwords should contain at least 1 lowercase letter</li>
+          <li data-rule="number">Passwords should contain at least 1 number</li>
+          <li data-rule="specialChar">Passwords should contain at least 1 special character</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Forbidden passwords -->
+    <details id="forbid-auto" class="collapsible-section">
+      <summary class="collapsible-trigger">Forbidden Passwords: </summary>
+      <div class="collapsible-content">
+        <p>Do not use the following passwords or any variation of the following:</p>
+        <ul id="doNotUse">
+          <li>Any Password with a space in it</li>
+          <li>password</li>
+          <li>1234567890</li>
+          <li>newpassword</li>
+          <li>password123</li>
+          <li>test</li>
+          <li>newpassword123</li>
+        </ul>
+      </div>
+    </details>
+</div>
+
+<div id="aboutUsCont">
+    <details id="ourMsg" class='collapsible-section'>
+      <summary class="collapsible-trigger">Why use Kryptik?</summary>
+      <div class="collapsible-content" id="philosophy">
+        <p>Welcome to Kryptik Passcodes. In a sea of password generators and managers, we aim to stand out from the crowd. With our easy to use strength checker you can check how secure your existing passwords are. If our system detects that you may be putting yourself at risk using weaker passwords, we will ask if you would like to generate a strong randomly generated password. If you are happy with your current password simply click no and your old password stays intact.</p>
+          <p>We understand that secure randomly generated passwords can be difficult to remember. So we have implemented our zero-knowledge encrypted vaults, all you need to do is create a free account. Sign in and start saving your passwords, usernames, and website urls to your vault.</p>
+            <p>What is zero-knowledge encryption? This is our way of ensuring that nobody, can view your credentials but you. Not even us.</p>
+            <p>Can you still check password strength without an account?<strong>Yes!</strong> Everyone deserves to know if they are putting themselves at risk.</p>
+      </div>
+
+    </details>
+</div>
+
+
+
+    <!--Enhancment modal-->
+<div id="passwd-enhancer" style="display: none;">
+  <div class="enhance-card">
+    <p id="enhanceMessage">Make your password strong?</p>
+    <button id="enhance">Yes</button>
+    <button id="cancel-enhance">No, thanks</button>
+  </div>
+</div>
+
+    <!-- Forbidden/Simple password warning -->
+<div id="forbiddenModal" style="display: none;">
+  <div class="forbid-card">
+    <div id="forbidMessage">
+      <h3 id="warning">Forbidden Password</h3>
+      <p id="bad-message">You have tried to use a forbidden password. Or your password contains a space. Please Remove the space or enter a better password</p>
+      <button id="close-forbid-modal">Close</button>
+    </div>
+  </div>
+</div>
+
+
+
+    <script src="assets/logic/checker.js"></script>
+    <script src="assets/logic/generator.js"></script>
+    <script src="assets/logic/main.js"></script>
+  <footer>
+    <div>
+      <h6 class="footer">Kryptik Passcodes&copy; All rights reserved by GonzoCodes.</h6>
+        <h6>Created by Gonzo</h6>
+    </div>
+  </footer>
+
+  </body>
+</html>

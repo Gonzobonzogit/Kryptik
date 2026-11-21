@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style/darkstyle.css">
+    <link rel="icon" href="./assets/icon/app-icon-square.svg">
+    <title> Kryptik - My Vault</title>
+  </head>
+
+  <body>
+   <script src='assets/logic/nav.js'></script>
+  
+    <div id="vaultContainer">
+      <div id="input-cont">
+        <div id="vaultInputArea">
+          <h1 id="appVault">My Vault</h1>
+        </div>
+        <p id="owner"></p>
+
+        <form id="newVaultForm" novalidate>
+          <div id="formInfo">
+            <h1 id='kryptikEntry'>Save your passwords here</h1>
+            <input type="text" id="websiteName" placeholder="Enter the website here(e.g. github)">
+            <input type="text" id="siteUser" placeholder="Enter the username or email used here">
+            <input type="password" id="savedPass" placeholder="Enter your password here">   
+          </div>
+
+          <div id="vaultInputBtns">
+            <button type="submit" class="inputBtn" id="saveNewEntry">Save</button>
+            <button type="button" class="inputBtn" id="genNewPass">Generate</button>
+          </div>
+        </form>
+      </div>
+
+      <ul id="vaultEntries"></ul>
+    </div>
+
+    <script src='assets/logic/generator.js'></script>
+    <script src='assets/logic/crypto.js'></script>
+    <script src='assets/logic/vault.js'></script>
+    
+    <footer>
+     <h6 id='vaultFooter'>Kyptik Passcodes&copy All rights reserved.</h6> 
+    </footer>
+  </body>
+</html>

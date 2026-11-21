@@ -1,0 +1,660 @@
+:root {
+    /* Background*/
+    --bg-main: #1e1e2e;
+    --bg-surface: #24273a;
+    --bg-input: #181825;
+
+    /* Text */
+    --text-main: #cdd6f4;
+    --text-muted: #bac2de;
+
+    /* Accents */
+    --accent-purple: #bd93f9;
+    --accent-blue: #89b4fa;
+    --accent-green: #a6e3a1;
+    --accent-red: #f38ba8;
+    --accent-gold: #f9e2af;
+
+    --shadow-dark: 0 8px 30px rgba(0, 0, 0, 0.5);
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    flex: 1;
+}
+
+
+#kryptikNav{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 25px;
+    background: var(--bg-surface);
+    border-bottom: 2px solid var(--accent-purple);
+    box-shadow: var(--shadow-dark);
+}
+
+.nav-left, .nav-right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-brand{
+    display:flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+
+.nav-brand span{
+    color: var(--text-muted);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+}
+
+.nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 6px 4px;
+    border-bottom: 2px solid transparent;
+    transition: var(--transition-smooth);
+}
+
+.nav-link:hover { color: var(--text-main); }
+
+.nav-link.active{
+    color: var(--accent-purple);
+    border-bottom-color: var(--accent-purple);
+}
+
+.nav-signup:hover { filter: brightness(1.15); }
+
+.nav-name { color: var(--text-muted); font-size: 0.9rem; }
+
+
+.nav-signup{
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: var(--accent-purple);
+    color: var(--bg-surface);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: var(--transition-smooth);
+}
+
+#nav-logout {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent-red);
+    color: var(--bg-main);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+#nav-logout:hover {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+}
+
+#hero-bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 25px 25px 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#heroIcon{
+    height: 100px;
+    width:  100px;
+    filter: drop-shadow(0 0 8px rgba(189, 147, 249, 0.4));
+}
+
+#welcome{
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-purple);
+    text-shadow: 0 0 10px rgba(189, 147, 249, 0.4);
+}
+
+#welcomeMsg{
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-purple);
+    text-shadow: 0 0 10px rgba(189, 147, 249, 0.4);
+}
+
+
+
+#input-container, #input-cont {
+    background: var(--bg-surface);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow-dark);
+    border-top: 4px solid var(--accent-purple);
+    margin-bottom: 30px;
+    transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#input-Pass, #input-fields input, #input-groups input, #formInfo input {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: var(--bg-input);
+    border: 2px solid #45475a;
+    border-radius: 10px;
+    color: var(--text-main);
+    font-size: 1.1rem;
+    transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+}
+
+#input-Pass:focus, #input-fields input:focus, #input-groups input:focus, #formInfo input:focus {
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 8px rgba(189, 147, 249, 0.4);
+}
+
+#toggles {
+    display: flex;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+#toggles input {
+    margin-right: 10px;
+    accent-color: var(--accent-purple);
+}
+
+#main-btns, #vaultInputBtns {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.inputBtn, .login-input-btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition-smooth);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--bg-main);
+}
+
+#check-btn {
+    background-color: var(--accent-green);
+}
+
+#check-btn:hover {
+    background-color: #bcf0b5;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(166, 227, 161, 0.4);
+}
+
+#clear-btn {
+    background-color: var(--accent-blue);
+}
+
+#clear-btn:hover {
+    background-color: #b4d3ff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(137, 180, 250, 0.4);
+}
+
+#reset-btn {
+    background-color: var(--accent-red);
+}
+
+#reset-btn:hover {
+    background-color: #ffafb7;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(243, 139, 168, 0.4);
+}
+
+/* The Strength Meter */
+#strength-meter-cont {
+    width: 100%;
+    height: 10px;
+    background: var(--bg-input);
+    border-radius: 5px;
+    margin-bottom: 0px;
+    overflow: hidden;
+}
+
+
+.meter-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+/* Collapsible Sections */
+#rules-container{
+    width: 400px;
+    margin: 0 auto;
+    padding: 0px;
+    transition: var(--transition-smooth);
+}
+
+#ourMsg{
+    width: 400px;
+    margin: 0 auto;
+    padding: 0px;
+    transition: var(--transition-smooth);
+}
+
+.collapsible-section {
+    background-color: var(--bg-surface);
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 1px solid #45475a;
+    transition: var(--transition-smooth);
+    overflow: hidden;
+}
+
+
+.collapsible-section:hover {
+    border-color: var(--accent-purple);
+}
+
+.collapsible-trigger {
+    padding: 15px 20px;
+    font-weight: 600;
+    color: var(--text-main);
+    cursor: pointer;
+    background: transparent;
+    transition: var(--transition-smooth);
+    list-style: disc;
+}
+
+.collapsible-trigger:hover {
+    background-color: rgba(189, 147, 249, 0.1);
+    color: var(--accent-purple);
+}
+
+.collapsible-content {
+    padding: 20px;
+    background-color: var(--bg-input);
+    border-top: 1px solid #45475a;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.collapsible-content ul{
+    margin: 0;
+    padding-left: 20px;
+}
+
+.collapsible-content li {
+    margin-bottom: 10px;
+}
+
+.rule-fail{
+    color: var(--accent-red);
+    list-style: none;
+    padding-left: 0;
+}
+
+.rule-fail::before{
+    content: "❌";
+    color: var(--accent-red);
+    font-weight: 700;
+}
+
+.rule-pass {
+    color: var(--accent-green);
+    list-style: none;
+    padding-left: 0;
+}
+
+.rule-pass::before {
+    content: "✅";
+    color: var(--accent-green);
+    font-weight: 700;
+    margin-right: 6px;
+}
+
+
+
+#forbidMessage{
+    background: var(--bg-surface);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow-dark);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+.enhance-card{
+    background: var(--bg-surface);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow-dark);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    border-top: 4px solid var(--accent-purple);
+}
+
+#enhance{
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition-smooth);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    background-color: var(--accent-green);
+    color: var(--bg-main);
+}
+
+#cancel-enhance{
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition-smooth);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    background-color: var(--accent-red);
+    color: var(--bg-main);
+}
+
+#close-forbid-modal{
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition-smooth);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    background-color: var(--accent-red);
+    color: var(--bg-main);
+}
+
+#passwd-enhancer,#forbiddenModal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.footer {
+    margin: 0;
+    opacity: 0.6;
+}
+
+#signin-cont,
+#signup-cont{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    flex: 1;
+}
+
+
+
+#title,
+#create,
+#appVault{
+    color: var(--accent-purple);
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(189, 147, 249, 0.5);
+    margin: 0 0 10px;
+}
+
+#input-fields,
+#input-groups,
+#formInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#master-pass-check{
+    width: 100%;
+    height: 10px;
+    background: var(--bg-input);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.signin-switch,
+.switch-signin{
+    margin-top: 20px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+
+.signin-switch a,
+.switch-signin a{
+    color: var(--accent-purple);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signin-switch a:hover,
+.switch-signin a:hover{
+    text-decoration: underline;
+}
+
+#signup-confirm { background-color: var(--accent-green); }
+#login-btn { background-color: var(--accent-purple); }
+
+#signup-confirm:hover,
+#login-btn:hover{
+    filter: brightness(1.15);
+    transform: translateY(-3px);
+}
+
+#vaultContainer{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    flex:1;
+}
+
+#owner{
+    text-align: center;
+    color: var(--text-muted);
+    margin: 0 0 25px;
+}
+
+#vaultEntries{
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.vaultEntry{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg-surface);
+    border: 1px solid #45475a;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    transition: var(--transition-smooth);
+}
+
+.vaultEntry:hover { border-color: var(--accent-purple); }
+
+.websiteEntry{
+    flex: 2 1 150px;
+    font-weight: 700;
+    color: var(--accent-purple);
+}
+
+.Username{
+    flex: 2 1 150px;
+    color: var(--text-muted);
+}
+
+.passwdEntry{
+    flex: 1 1 150px;
+    font-family: monospace;
+    letter-spacing: 1px;
+}
+
+#vaultEntries button{
+    flex: 0 0 auto;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    background: var(--accent-blue);
+    color: var(--bg-main);
+    transition: var(--transition-smooth);
+}
+
+#vaultEntries button:hover { transform: translateY(-2px); }
+
+.vaultIsNew {
+    background: var(--bg-surface);
+    border: 1px dashed #45475a;
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+/* Vault button accents */
+#saveNewEntry { background-color: var(--accent-green); }
+#genNewPass   { background-color: var(--accent-blue); }
+
+#vaultInputBtns .inputBtn:hover {
+    filter: brightness(1.15);
+    transform: translateY(-3px);
+}
+
+/* =====================================================
+   Mobile Compatible
+   ===================================================== */
+
+@media only screen and (max-width: 600px) {
+    #signin-cont,
+    #signup-cont,
+    #vaultContainer {
+        padding: 30px 15px;
+    }
+    #kryptikNav { padding: 10px 15px; gap: 10px; }
+    .nav-left, .nav-right { gap: 12px; }
+    .nav-name { display: none; }
+    .nav-link { font-size: 0.85rem; }
+    .nav-brand span { font-size: 0.8rem; letter-spacing: 1px; }
+
+
+    #hero-bar { padding: 15px 15px 0; gap: 10px; }
+    #heroIcon { height: 32px; width: 32px; }
+    #welcome { font-size: 1.05rem; letter-spacing: 1px; }
+
+    #input-cont {
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+
+    #title,
+    #create,
+    #appVault {
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+    }
+
+    .vaultEntry { padding: 12px 15px; }
+}
+
+@media only screen and (max-width: 380px) {
+    #vaultInputBtns {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #title,
+    #create,
+    #appVault {
+        font-size: 1.4rem;
+    }
+}
+

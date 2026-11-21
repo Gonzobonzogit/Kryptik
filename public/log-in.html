@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style/darkstyle.css">
+    <link rel="icon" href="./assets/icon/app-icon-square.svg" type="image/x-icon">
+    <title>Kryptik Passcodes - Sign In</title>
+  </head>
+
+  <body>
+  <script src="assets/logic/nav.js"></script>
+    <div id="signin-cont">
+
+      <div id="input-cont">
+        <div id="input-cont-title">
+          <h1 id="title">Sign In</h1>
+        </div>
+
+        <form id="login-form" novalidate>
+          <div id="input-fields">
+            <input type="text" id="user-login" placeholder="Enter Username or Email" autocomplete="username">
+            <input type="password" id="user-pass" placeholder="Enter password" autocomplete="current-password">
+          </div>
+
+          <div id="main-btns">
+            <button type="submit" class="login-input-btn" id="login-btn">Log In</button>
+          </div>
+        </form>
+        
+        <p class="signin-switch">New? <a href="./sign-up.html">Create a new account</a></p>
+      </div>
+    </div>
+    
+    <script src="assets/logic/checker.js"></script>
+    <script src="assets/logic/crypto.js"></script>
+    <script src="assets/logic/auth.js"></script>
+
+    <footer>
+      <h6>Kryptik Passcodes&copy All rights reserved</h6>
+    </footer>
+  </body>
+</html>
