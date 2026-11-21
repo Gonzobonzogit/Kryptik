@@ -34,7 +34,7 @@ const hkdf = (master) => {
 
 const deriveAuthVerifier = async(masterPassword, saltB64) => {
   const authBits = await crypto.subtle.deriveBits(
-    { name: 'HKDF', hash: 'SHA-256', salt: new Uint8Array(0), info: enc.encode('passforge-auth-v1') },
+    { name: 'HKDF', hash: 'SHA-256', salt: new Uint8Array(0), info: enc.encode('kryptik-auth-v1') },
     await hkdf(await deriveMasterSecret(masterPassword, saltB64)),
     256
   );
@@ -43,10 +43,10 @@ const deriveAuthVerifier = async(masterPassword, saltB64) => {
 
 const deriveSessionKey = async(masterPassword, saltB64) => {
   return crypto.subtle.deriveKey(
-    { name: 'HKDF', hash: 'SHA-256', salt: new Uint8Array(0), info: enc.encode('passforge-enc-v1') },
+    { name: 'HKDF', hash: 'SHA-256', salt: new Uint8Array(0), info: enc.encode('kryptik-enc-v1') },
     await hkdf(await deriveMasterSecret(masterPassword, saltB64)),
     { name: 'AES-GCM', length: 256 },
-    true, // extractable: raw key is exported to sessionStorage so the vault unlocks after the auth redirect; storage dies with the tab
+    true, 
     ['encrypt', 'decrypt']
   );
 };
@@ -72,8 +72,6 @@ const decryptString = async(packedB64) => {
 
 const setSessionKey = async (key) => {
   sessionKey = key;
-  // Web storage holds strings only, so persist the raw key bytes instead of the CryptoKey object.
-  // Encrypted at rest by nature of being a derived key; wiped when the tab closes.
   const raw = await crypto.subtle.exportKey('raw', key);
   sessionStorage.setItem('pf_key', b64(raw));
 };
