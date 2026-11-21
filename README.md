@@ -59,12 +59,6 @@ master password (browser only)
 | Cipher | AES-256-GCM |
 | IV | 12 random bytes per encryption, prepended and base64-packed |
 
-> **Protocol identifiers are frozen.** The HKDF labels `passforge-auth-v1` /
-> `passforge-enc-v1`, the `window.PF` namespace, and the `pf_key` storage key are
-> *protocol-level* names, not brand names. Changing them after launch changes how
-> every existing user's keys derive — every saved entry would fail to decrypt and
-> every verifier would stop matching. Brand updates never touch these.
-
 **There is no password recovery.** By design — the server cannot reset what it
 cannot see. Lose the master password, lose the vault. That is the product being
 honest about what zero-knowledge means.
