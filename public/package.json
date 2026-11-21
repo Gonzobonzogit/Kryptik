@@ -5,7 +5,7 @@
   "description": "Kryptik Passcodes — a zero-knowledge password toolkit: live strength checker, CSPRNG password generator, and an encrypted personal vault. The server never sees your master password.",
   "main": "server/server.js",
   "scripts": {
-    "start": "npm server/server.js",
+    "start": "npm run dev",
     "dev": "nodemon server/server.js",
     "test": "node --test",
     "check:syntax": "find server public/assets/logic -type f -name '*.js' -print0 | xargs -0 -n1 node --check"

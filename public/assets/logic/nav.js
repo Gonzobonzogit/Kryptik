@@ -26,7 +26,6 @@ const initNav = async() => {
           <a href="index.html" class="nav-link" id="navToChckr">Checker</a>
           ${vaultLink}
           <a href="contact.html" class="nav-link" id="navToContact">Contact Us</a>
-          ${contactLink}
         </div>
         <div class="nav-right">
           ${rightSide}
